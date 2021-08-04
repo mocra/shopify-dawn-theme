@@ -12,7 +12,7 @@
     <div class="flex justify-center items-center" style="padding: 1.5rem">
       <div>
         <h1 class="product__title" style="font-size: 4rem;">
-          {{ product.title }}
+          {{ product.title | escape }}
         </h1>
         <p class="element-margin price price--large">
           <span class="price-item price-item--regular">
