@@ -1,0 +1,28 @@
+<script async src="https://mocralivelinks.com/livelinks/v1/designer/installer.js"></script>
+<div data-livelinks="v1" style="display: none">
+  {% if template == "product" %}
+  <div class="grid grid-cols-2 bg-white overflow-hidden h-full">
+    <div class="h-full flex items-center justify-start">
+      <img
+        class="object-cover"
+        src="{{ product.featured_image | img_url: 'large' }}"
+        loading="lazy"
+      />
+    </div>
+    <div class="flex justify-center items-center p-6">
+      <div>
+        <h1 class="text-6xl">
+          {{ product.title }}
+        </h1>
+        <p class="element-margin price price--large">
+          <span class="price-item price-item--regular">
+            {{ product.price | money }}
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div></div>
+  {% endif %}
+</div>
