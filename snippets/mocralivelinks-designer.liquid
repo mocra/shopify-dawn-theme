@@ -1,7 +1,7 @@
 <script async src="https://mocralivelinks.com/livelinks/v1/designer/installer.js"></script>
 <div data-livelinks="v1" style="display: none">
   {% if template == "product" %}
-  <div class="grid grid-cols-2 bg-white overflow-hidden h-full">
+  <div class="product grid grid-cols-2 bg-white overflow-hidden h-full">
     <div class="h-full flex items-center justify-start">
       <img
         class="object-cover"
@@ -9,14 +9,14 @@
         loading="lazy"
       />
     </div>
-    <div class="flex justify-center items-center p-6">
+    <div class="flex justify-center items-center" style="padding: 1.5rem">
       <div>
-        <h1 class="text-6xl">
+        <h1 class="product__title" style="font-size: 4rem;">
           {{ product.title }}
         </h1>
         <p class="element-margin price price--large">
           <span class="price-item price-item--regular">
-            {{ product.price | money }}
+            {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
           </span>
         </p>
       </div>
