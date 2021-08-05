@@ -6,6 +6,8 @@
       <img
         class="object-cover"
         src="{{ product.featured_image | img_url: 'large' }}"
+        width="{{ product.featured_image.width }}"
+        height="{{ product.featured_image.height }}"
         loading="lazy"
       />
     </div>
