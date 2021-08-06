@@ -24,7 +24,16 @@
       </div>
     </div>
   </div>
+  {% elsif template == "index" %}
+  <div class="relative bg-white">
+    <div class="absolute inset-0">{{ 'lifestyle-1' | placeholder_svg_tag: 'h-full' }}</div>
+    <div class="flex justify-center items-center h-full w-full">
+      <p class="z-10 bg-white p-10 text-6xl">{{ shop.name }}</p>
+    </div>
+  </div>
   {% else %}
-  <div></div>
+  <div>
+    template: {{ template }}
+  </div>
   {% endif %}
 </div>
