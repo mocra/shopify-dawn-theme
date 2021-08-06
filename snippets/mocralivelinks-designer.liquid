@@ -31,6 +31,20 @@
       <p class="z-10 bg-white p-10 text-6xl">{{ shop.name }}</p>
     </div>
   </div>
+  {% elsif template == "collection" %}
+  <div class="bg-indigo-300 ">
+    <table class="bg-indigo-200">
+      {% tablerow product_card_product in collection.products cols: 4 %}
+        <img
+          src="{{ product_card_product.featured_media | img_url: '240x240' }}"
+          alt="{{ product_card_product.featured_media.alt | escape }}"
+          loading="lazy"
+          width="240"
+          height="240"
+        >
+      {% endtablerow %}
+    </table>
+  </div>
   {% else %}
   <div>
     template: {{ template }}
