@@ -1,0 +1,47 @@
+<script async src="https://mocralivelinks.com/livelinks/v1/designer/installer.js"></script>
+<link
+  disabled
+  class="livelinks-onload"
+  href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+  rel="stylesheet"
+/>
+<div data-livelinks="v1" style="display: none">
+  {% if template == "product" %}
+  <div class="bg-white">
+    <div class="h-full grid grid-cols-12">
+      <div class="col-span-7 flex items-center justify-center">
+        <img
+          class="object-cover"
+          src="{{ product.featured_image | img_url: '480x480' }}"
+          width="480"
+          height="480"
+          loading="lazy"
+        />
+      </div>
+      <div class="col-span-5  flex items-center justify-center">
+        <div>
+          <h1 class="product__title text-5xl">
+            {{ product.title | escape }}
+          </h1>
+          <p class="element-margin price price--large">
+            <span class="price-item price-item--regular">
+              {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="relative text-black bg-white">
+    <div class="absolute inset-0">
+      {{ "lifestyle-1" | placeholder_svg_tag: "h-full" }}
+    </div>
+    <div class="flex justify-center items-center w-full h-full">
+      <h1 class="z-10 p-4 text-8xl bg-white font-shopify">
+        {{ shop.name | escape }}
+      </h1>
+    </div>
+  </div>
+  {% endif %}
+</div>
