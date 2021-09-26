@@ -21,9 +21,9 @@
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description | escape }}">
 
-{% assign mocralivelinks = shop.metafields.mocralivelinks.root_url %}
-{% if mocralivelinks %}
-<meta property="og:image" content="{{ mocralivelinks }}/livelinks/v1/render.png?v=v1&r=300&url={{ canonical_url }}&panelheight=480&panelwidth=912">
+{% assign mocralivelinks_render_png = shop.metafields.mocralivelinks.render_png %}
+{% if mocralivelinks_render_png %}
+<meta property="og:image" content="{{ mocralivelinks_render_png }}?v=v1&r=300&url={{ canonical_url }}&panelheight=480&panelwidth=912">
 <meta property="og:image:height" content="480">
 <meta property="og:image:width" content="912">
 {% endif %}
