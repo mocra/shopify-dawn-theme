@@ -21,9 +21,12 @@
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description | escape }}">
 
-<meta property="og:image" content="https://mocralivelinks.com/livelinks/v1/render.png?v=v1&r=300&url={{ canonical_url }}&panelheight=480&panelwidth=912">
+{% assign mocralivelinks = shop.metafields.mocralivelinks.root_url %}
+{% if mocralivelinks %}
+<meta property="og:image" content="{{ mocralivelinks }}/livelinks/v1/render.png?v=v1&r=300&url={{ canonical_url }}&panelheight=480&panelwidth=912">
 <meta property="og:image:height" content="480">
 <meta property="og:image:width" content="912">
+{% endif %}
 
 {%- if request.page_type == 'product' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
