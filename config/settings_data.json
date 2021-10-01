@@ -81,6 +81,12 @@
         "disabled": false,
         "settings": {
         }
+      },
+      "16330514690e4d94b9": {
+        "type": "shopify:\/\/apps\/mocra-live-links-dev\/blocks\/sample-designer\/45e65dec-dceb-4fb0-8d49-93033a9c99c4",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
