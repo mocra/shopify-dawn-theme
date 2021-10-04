@@ -86,7 +86,7 @@
         "type": "shopify:\/\/apps\/mocra-live-links-dev\/blocks\/sample-designer\/45e65dec-dceb-4fb0-8d49-93033a9c99c4",
         "disabled": false,
         "settings": {
-          "title": ""
+          "homepage_background": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg"
         }
       }
     }
