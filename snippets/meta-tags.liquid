@@ -21,14 +21,15 @@
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description | escape }}">
 
-{%- unless shop.metafields.overrides.og_image -%}
-{%- if page_image -%}
-  <meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
-  <meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
-  <meta property="og:image:width" content="{{ page_image.width }}">
-  <meta property="og:image:height" content="{{ page_image.height }}">
-{%- endif -%}
-{%- endunless -%}
+<!--
+  REQUIRED fields for Mocra Live Links
+  Requests for your social images will be received by {{ mocralivelinks_render_png }}
+  which will in turn load the Live Links Designer on your Shopify page,
+  take a screenshot, and return it to the social app.
+-->
+<meta property="og:image" content="{{ mocralivelinks_render_png }}?v=v1&r=300&url={{ canonical_url }}&panelheight=480&panelwidth=917">
+<meta property="og:image:height" content="480">
+<meta property="og:image:width" content="917">
 
 {%- if request.page_type == 'product' -%}
   <meta property="og:price:amount" content="{{ product.price | money_without_currency | strip_html }}">
